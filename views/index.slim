@@ -1,0 +1,15 @@
+p Upload file here
+
+form action="/process" method="post" enctype='multipart/form-data'
+  .form-input
+    label for="file" File:
+    input type="file" name="file"
+  .form-input
+    label for="size" Size:
+    input type="text" name="size"
+  .form-input
+    label for="color" Color:
+    input type="text" name="color"
+  .form-input
+    input type="submit" Process
+
