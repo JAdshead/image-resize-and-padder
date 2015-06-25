@@ -7,7 +7,7 @@ get '/' do
 end
 
 post '/process' do
-  @image = FileProcessor.new(params[:file], params[:size], params[:color]).process
+  @image = FileProcessor.new(params[:file], params[:width], params[:height], params[:color]).process
   slim :process
 end
 

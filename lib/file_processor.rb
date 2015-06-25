@@ -18,6 +18,9 @@ class FileProcessor
   def process
     MiniMagick::Image.new('uploads/'+@file[:filename]) do |img|
       img.resize "#{@width}x#{@height}"
+      img.background "#{@color}"
+      img.gravity "center"
+      img.extent "#{@width}x#{@height}"
     end
   end
 end
