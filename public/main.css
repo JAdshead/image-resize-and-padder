@@ -1,3 +1,44 @@
-h1 {
-  color: red;
-} 
+html {
+  color: #99A3F2;
+  font-size: 100%;
+  font-family: 'helvetica neue';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  line-height: 1.3em;
+  background-color: #F2E899;
+}
+
+h1, h2, h3, p {
+  text-align: center;
+  font-weight: 300;
+}
+
+a {text-decoration: none; color: #F299D0; font-weight: bold; }
+
+footer {
+  text-align: right;
+  margin-top: 4em;
+}
+
+.form-input {
+  margin: 1em;
+}
+
+input {
+  /* padding: 4px; */
+  float: right;
+  /* border: 2px solid #99A3F2; */
+  border-radius: 4px;
+}
+input[type="submit"] {
+  background-color: #99F2BB;
+  color: #99A3F2;
+  font-weight: bold;
+}
+
+.form-input:first-of-type input {
+  float: left;
+}

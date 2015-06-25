@@ -1,18 +1,22 @@
-p Upload file here
+.trunk
+  h2.gutters Upload file here
 
-form action="/process" method="post" enctype='multipart/form-data'
-  .form-input
-    label for="file" File:
-    input type="file" name="file"
-  .form-input
-    label for="width" Width:
-    input type="text" name="width"
-  .form-input
-    label for="height" Height:
-    input type="text" name="height"
-  .form-input
-    label for="color" Fill Color:
-    input type="text" name="color" value="transparent" 
-  .form-input
-    input type="submit" Process
+  form action="/process" method="post" enctype='multipart/form-data'
+    .form-input
+      input type="file" name="file" value="Choose Iamge" class="L-1-1" required="required" 
+      .clear
+    .form-input
+      label for="width" WIDTH:
+      input type="number" min="0" max="2000" name="width" required="required"
+      .clear
+    .form-input
+      label for="height" HEIGHT:
+      input type="number" min="0" max="2000" name="height" required="required"
+      .clear
+    .form-input
+      label for="color" FILL COLOR:
+      input type="color" name="color" value="#ffffff" required="required"
+      .clear
+    .form-input
+      input type="submit" value="PROCESS"
 
