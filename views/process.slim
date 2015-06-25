@@ -4,5 +4,6 @@
 
   img src="/#{@image.path}"
 
-  form method="get" action="/#{@image.path}"
-  button type="submit" Download
+  a href="/#{@image.path}" download="#{@name}" SAVE IT!
+  /* form method="get" action="/#{@image.path}" */
+    /* button type="submit" Download */
