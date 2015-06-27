@@ -3,23 +3,24 @@ class ImageProcessor
 
   def initialize(img, width, height, color)
     @img = img
+    @iMagick = MiniMagick::Image.new(@img.path)
     @width = width
     @height = height
     @color = color || "transparent"
   end
 
   def process
-    # if @color == "transparent"
-    #   img = MiniMagick::Image.new(@img.path)
-    #   img.format "png"
-    # end
-
-    MiniMagick::Image.new(@img.path) do |img|
-      img.resize "#{@width}x#{@height}"
-      img.background "#{@color}"
-      img.gravity "center"
-      img.extent "#{@width}x#{@height}"
+    if @color == "transparent"
+      @iMagick.format "png"
     end
+
+    @iMagick.combine_options do |c|
+     c.resize "#{@width}x#{@height}"
+     c.background "#{@color}"
+     c.gravity "center"
+     c.extent "#{@width}x#{@height}"
+    end
+
   end
 
 end
