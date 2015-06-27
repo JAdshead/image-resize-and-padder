@@ -1,26 +1,25 @@
-class FileProcessor
+class ImageProcessor
   require "mini_magick"
 
-  def initialize(file, width, height, color)
-    @file = file
+  def initialize(img, width, height, color)
+    @img = img
     @width = width
     @height = height
-    @color = color
-    save_file
-  end
-
-  def save_file
-    File.open('uploads/'+@file[:filename], 'w') do |file|
-      file.write(@file[:tempfile].read)
-    end
+    @color = color || "transparent"
   end
 
   def process
-    MiniMagick::Image.new('uploads/'+@file[:filename]) do |img|
+    # if @color == "transparent"
+    #   img = MiniMagick::Image.new(@img.path)
+    #   img.format "png"
+    # end
+
+    MiniMagick::Image.new(@img.path) do |img|
       img.resize "#{@width}x#{@height}"
       img.background "#{@color}"
       img.gravity "center"
       img.extent "#{@width}x#{@height}"
     end
   end
+
 end

@@ -5,6 +5,7 @@ $:.unshift APP_ROOT+'/lib'
 use Rack::Static, :urls => ['/uploads']
 
 require 'main'
+require 'image'
 require 'file_processor'
 
 run Sinatra::Application

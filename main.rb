@@ -7,9 +7,9 @@ get '/' do
 end
 
 post '/process' do
-  @image = FileProcessor.new(params[:file], params[:width], params[:height], params[:color]).process
-  @name = params[:file][:filename].scan(/\w+/).first
+  @image = Image.new(params[:file])
   binding.pry
+  ImageProcessor.new(@image , params[:width], params[:height], params[:color]).process
   slim :process
 end
 
