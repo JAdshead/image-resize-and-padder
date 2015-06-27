@@ -16,7 +16,13 @@ h1, h2, h3, p {
   font-weight: 300;
 }
 
-a {text-decoration: none; color: #F299D0; font-weight: bold; }
+a {
+  text-decoration: none; 
+  color: #F299D0; 
+  font-weight: bold; 
+  display: inline-block;
+  margin: 1em 0 ;
+}
 
 footer {
   text-align: right;

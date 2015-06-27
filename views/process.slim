@@ -1,7 +1,7 @@
 .trunk
   a href="/" HOME
   h2 HERE IS YOUR PROCESSED IMAGE 
+  a href="/#{@image.path}" download="#{@image.shortname}" SAVE IT!
 
   img src="/#{@image.path}"
 
-  a href="/#{@image.path}" download="#{@image.shortname}" SAVE IT!
