@@ -4,9 +4,9 @@ class ImageProcessor
   def initialize(img, width, height, color)
     @img = img
     @iMagick = MiniMagick::Image.new(@img.path)
-    @width = width
-    @height = height
-    @color = color || "transparent"
+    @width = clean(width)
+    @height = clean(height)
+    @color = clean(color) || "transparent"
   end
 
   def process
@@ -23,4 +23,7 @@ class ImageProcessor
 
   end
 
+  def clean string
+    string.strip.downcase.scan(/\#?\w+/).first
+  end
 end
